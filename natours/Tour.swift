@@ -1,25 +1,26 @@
-import Foundation
-
-struct ToursResponse: Decodable {
+struct ToursResponse: Codable {
     let status: String
     let results: Int
-    let data: ToursData
+    let data: TourData
 }
 
-struct ToursData: Decodable {
+struct TourData: Codable {
     let data: [Tour]
 }
 
-struct Tour: Identifiable, Decodable {
+struct Tour: Codable, Identifiable {
     let id: String
     let name: String
-    let description: String
-    let duration: Int?
-    let price: Double
-    let ratingsQuantity: Int?
-    let ratingsAverage: Double?
-    let maxGroupSize: Int
     let difficulty: String
-    // Add other fields as necessary
-    // Note: Change data types as per the actual data
+    let price: Int
+    let summary: String
+
+    // Use CodingKeys to map the id property to the correct key
+    enum CodingKeys: String, CodingKey {
+        case id = "_id"
+        case name
+        case difficulty
+        case price
+        case summary
+    }
 }

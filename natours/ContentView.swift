@@ -10,24 +10,42 @@ struct ContentView: View {
             } else {
                 NavigationView {
                     VStack {
+                        Spacer()
+                        Text("Welcome to Natours!")
+                            .font(.headline)
+                            .padding(.top, 10)
+
+                        Text("Login or Sign up to book a tour")
+                            .font(.headline)
+                            .padding(.top, 10)
+
+                  
+
                         NavigationLink(destination: LoginView(isLoggedIn: $isLoggedIn)) {
                             Text("Login")
+                                .font(.title2)
+                                .padding(.top, 20)
+
+                             
+                              
                         }
-                        .padding()
+
 
                         NavigationLink(destination: SignupView(isLoggedIn: $isLoggedIn)) {
                             Text("Create Account")
+                                .font(.title2)
+                               
                         }
                         .padding()
+                        
+                        Spacer()
+                        
                     }
-                    .navigationBarTitle("Welcome")
                 }
             }
         }
     }
 }
-
-
 
 #Preview {
     ContentView()

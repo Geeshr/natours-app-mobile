@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		55593C0E2C112F6D000B4D0F /* Top5CheapToursView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55593C0D2C112F6D000B4D0F /* Top5CheapToursView.swift */; };
+		55593C102C1131F5000B4D0F /* Top5CheapToursViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55593C0F2C1131F5000B4D0F /* Top5CheapToursViewModel.swift */; };
+		55593C122C113B3D000B4D0F /* CreateTourView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55593C112C113B3D000B4D0F /* CreateTourView.swift */; };
+		555CCDE72C0E55E00029A2D8 /* TopFive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555CCDE62C0E55E00029A2D8 /* TopFive.swift */; };
 		55BDE9532C038678001ADF3E /* natoursApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BDE9522C038678001ADF3E /* natoursApp.swift */; };
 		55BDE9552C038678001ADF3E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BDE9542C038678001ADF3E /* ContentView.swift */; };
 		55BDE9572C038679001ADF3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55BDE9562C038679001ADF3E /* Assets.xcassets */; };
@@ -44,6 +48,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		55593C0D2C112F6D000B4D0F /* Top5CheapToursView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Top5CheapToursView.swift; sourceTree = "<group>"; };
+		55593C0F2C1131F5000B4D0F /* Top5CheapToursViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Top5CheapToursViewModel.swift; sourceTree = "<group>"; };
+		55593C112C113B3D000B4D0F /* CreateTourView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTourView.swift; sourceTree = "<group>"; };
+		555CCDE62C0E55E00029A2D8 /* TopFive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopFive.swift; sourceTree = "<group>"; };
 		55BDE94F2C038678001ADF3E /* natours.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = natours.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55BDE9522C038678001ADF3E /* natoursApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = natoursApp.swift; sourceTree = "<group>"; };
 		55BDE9542C038678001ADF3E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -128,6 +136,10 @@
 				55C89ACC2C0CF9070095C794 /* Tour.swift */,
 				55C89ACE2C0CF9460095C794 /* BookingFormView.swift */,
 				55C89AD02C0CFBFE0095C794 /* BookingView.swift */,
+				555CCDE62C0E55E00029A2D8 /* TopFive.swift */,
+				55593C0D2C112F6D000B4D0F /* Top5CheapToursView.swift */,
+				55593C0F2C1131F5000B4D0F /* Top5CheapToursViewModel.swift */,
+				55593C112C113B3D000B4D0F /* CreateTourView.swift */,
 			);
 			path = natours;
 			sourceTree = "<group>";
@@ -287,11 +299,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55593C0E2C112F6D000B4D0F /* Top5CheapToursView.swift in Sources */,
+				555CCDE72C0E55E00029A2D8 /* TopFive.swift in Sources */,
 				55C89AD12C0CFBFE0095C794 /* BookingView.swift in Sources */,
 				55BDE9852C039622001ADF3E /* SignupView.swift in Sources */,
 				55BDE9832C0395F7001ADF3E /* LoginView.swift in Sources */,
+				55593C102C1131F5000B4D0F /* Top5CheapToursViewModel.swift in Sources */,
 				55C89AC92C0CF80E0095C794 /* ToursView.swift in Sources */,
 				55C89ACD2C0CF9070095C794 /* Tour.swift in Sources */,
+				55593C122C113B3D000B4D0F /* CreateTourView.swift in Sources */,
 				55BDE97F2C03926C001ADF3E /* NetworkManager.swift in Sources */,
 				55BDE9552C038678001ADF3E /* ContentView.swift in Sources */,
 				55BDE9532C038678001ADF3E /* natoursApp.swift in Sources */,

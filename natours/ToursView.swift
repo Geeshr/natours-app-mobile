@@ -20,15 +20,9 @@ struct ToursView: View {
                             VStack(alignment: .leading, spacing: 10) {
                                 Text(tour.name)
                                     .font(.headline)
-                                Text(tour.description)
-                                    .font(.subheadline)
-                                Text("Duration: \(tour.duration ?? 0) days")
+                                Text(tour.summary)  // Replace description with summary
                                     .font(.subheadline)
                                 Text("Price: $\(tour.price)")
-                                    .font(.subheadline)
-                                Text("Rating: \(tour.ratingsAverage ?? 0) (\(tour.ratingsQuantity ?? 0) ratings)")
-                                    .font(.subheadline)
-                                Text("Group size: \(tour.maxGroupSize)")
                                     .font(.subheadline)
                                 Text("Difficulty: \(tour.difficulty)")
                                     .font(.subheadline)
