@@ -15,7 +15,6 @@ struct Tour: Codable, Identifiable {
     let price: Int
     let summary: String
 
-    // Use CodingKeys to map the id property to the correct key
     enum CodingKeys: String, CodingKey {
         case id = "_id"
         case name

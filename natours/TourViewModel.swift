@@ -13,7 +13,6 @@ class ToursViewModel: ObservableObject {
 
         URLSession.shared.dataTask(with: url) { data, response, error in
             if let data = data {
-                // Print the raw response to diagnose the issue
                 if let rawResponse = String(data: data, encoding: .utf8) {
                     print("Raw response: \(rawResponse)")
                 }

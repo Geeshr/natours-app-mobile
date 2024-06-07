@@ -73,13 +73,13 @@ class NetworkManager {
     }
 
     struct TourCreateRequest: Codable {
-        let name: String
-        let duration: Int
-        let price: Int
-        let maxGroupSize: Int
-        let difficulty: String
-        let summary: String
-    }
+           let name: String
+           let duration: Int
+           let price: Int
+           let maxGroupSize: Int
+           let difficulty: String
+           let summary: String
+       }
     func fetchTop5CheapTours(completion: @escaping (Result<[Tour], Error>) -> Void) {
             guard let url = URL(string: "https://natours-9mok.onrender.com/api/v1/tours/top-5-cheap") else { return }
 
@@ -94,7 +94,6 @@ class NetworkManager {
                     return
                 }
 
-                // Print the raw JSON data for debugging
                 if let json = try? JSONSerialization.jsonObject(with: data, options: []) {
                     print("Raw JSON response: \(json)")
                 }
@@ -132,28 +131,9 @@ class NetworkManager {
             completion(.success(()))
         }.resume()
     }
-    func createTour(tour: TourCreateRequest, completion: @escaping (Result<Void, Error>) -> Void) {
-        guard let url = URL(string: "https://natours-9mok.onrender.com/api/v1/tours") else { return }
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.httpBody = try? JSONEncoder().encode(tour)
-        
-        URLSession.shared.dataTask(with: request) { data, response, error in
-            if let error = error {
-                completion(.failure(error))
-                return
-            }
-            if let httpResponse = response as? HTTPURLResponse {
-                if httpResponse.statusCode == 201 {
-                    completion(.success(()))
-                } else {
-                    let error = NSError(domain: "", code: httpResponse.statusCode, userInfo: [NSLocalizedDescriptionKey: "Tour creation failed"])
-                    completion(.failure(error))
-                }
-            }
-        }.resume()
-    }
+    
+
+
 }
 
 

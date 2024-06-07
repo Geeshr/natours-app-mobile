@@ -81,24 +81,35 @@ struct BookingView: View {
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
                 DispatchQueue.main.async {
-                    errorMessage = "Booking failed: \(error.localizedDescription)"
+                    self.errorMessage = "Booking failed: \(error.localizedDescription)"
                 }
                 return
             }
 
-            if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 {
+            guard let httpResponse = response as? HTTPURLResponse else {
                 DispatchQueue.main.async {
-                    bookingSuccess = true
+                    self.errorMessage = "Booking failed. Invalid response."
+                }
+                return
+            }
+
+            if httpResponse.statusCode == 201 {
+                DispatchQueue.main.async {
+                    self.bookingSuccess = true
                 }
             } else {
+                let responseString = String(data: data ?? Data(), encoding: .utf8)
                 DispatchQueue.main.async {
-                    errorMessage = "Booking failed. Please try again."
+                    self.errorMessage = "Booking failed. Response: \(responseString ?? "No response")"
+                    self.errorMessage = "Response Status Code: \(httpResponse.statusCode)"
                 }
             }
         }.resume()
     }
+
+    
 }
 
 #Preview {
-    BookingView(tour: nil) // This is only for preview purposes
+    BookingView(tour: nil)
 }

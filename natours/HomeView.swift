@@ -5,7 +5,6 @@ struct HomeView: View {
     @Binding var isLoggedIn: Bool
     @State private var showToursView = false
     @State private var showTop5CheapToursView = false
-    @State private var showCreateTourView = false
 
     var body: some View {
         NavigationView {
@@ -21,13 +20,10 @@ struct HomeView: View {
                         HomeOptionView(imageName: "globe", title: "All Tours", width: 200, height: 200)
                     }
 
-                    NavigationLink(destination: Top5CheapToursView(), isActive: $showTop5CheapToursView) {
+                    NavigationLink(destination: Top5CheapToursViews(), isActive: $showTop5CheapToursView) {
                         HomeOptionView(imageName: "star", title: "Top 5 Cheap Tours", width: 200, height: 200)
                     }
 
-                    NavigationLink(destination: CreateTourView(), isActive: $showCreateTourView) {
-                        HomeOptionView(imageName: "plus.circle", title: "Create Tour", width: 200, height: 200)
-                    }
 
                     Button(action: {
                         logout()

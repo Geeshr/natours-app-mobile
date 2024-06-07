@@ -20,7 +20,7 @@ struct ToursView: View {
                             VStack(alignment: .leading, spacing: 10) {
                                 Text(tour.name)
                                     .font(.headline)
-                                Text(tour.summary)  // Replace description with summary
+                                Text(tour.summary)  
                                     .font(.subheadline)
                                 Text("Price: $\(tour.price)")
                                     .font(.subheadline)
@@ -62,3 +62,4 @@ struct ToursView: View {
 #Preview {
     ToursView()
 }
+//5011054488597827
